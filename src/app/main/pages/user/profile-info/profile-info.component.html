@@ -1,0 +1,93 @@
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card mb-4">
+      <div class="card-body text-center">
+        <img
+          src="{{ apiUrl }}/{{ user?.image }}"
+          alt="avatar"
+          class="rounded-circle img-fluid w-56 h-56"
+        />
+        <h5 class="my-3">{{ user?.firstName }} {{ user?.lastName }}</h5>
+        <p class="text-muted mb-1">{{ user?.role }}</p>
+
+        <div class="d-flex justify-content-center mb-2">
+          <button
+            *ngIf="!showUpload"
+            type="button"
+            class="btn btn-primary"
+            (click)="toggleShowUpload()"
+          >
+            Change Avatar
+          </button>
+          <div *ngIf="showUpload" class="form-group d-flex align-items-center">
+            <input
+              type="file"
+              (change)="setImage($event)"
+              required
+              class="form-control form-control-sm"
+            />
+            <button
+              (click)="updateUserImage()"
+              class="btn btn-sm btn-success mx-1"
+            >
+              <i class="fas fa-check"></i>
+            </button>
+            <button class="btn btn-sm btn-danger" (click)="toggleShowUpload()">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Full Name</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0">
+              {{ user?.firstName }} {{ user?.lastName }}
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Email</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0">{{ user?.email }}</p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Phone</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0">{{ user?.phone }}</p>
+          </div>
+        </div>
+
+        <hr />
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="mb-0">Address</p>
+          </div>
+          <div class="col-sm-9">
+            <p class="text-muted mb-0">{{ user?.address }}</p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <button class="btn btn-primary col-6" (click)="openUpdateModal()">
+            Update Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

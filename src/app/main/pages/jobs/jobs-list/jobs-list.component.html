@@ -1,0 +1,198 @@
+<div class="job-listing-area py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-3 col-lg-3 col-md-4">
+        <div class="row">
+          <div class="col-12">
+            <div class="small-section-tittle2 mb-45">
+              <div class="ion">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="20px"
+                  height="12px"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    fill="rgb(27, 207, 107)"
+                    d="M7.778,12.000 L12.222,12.000 L12.222,10.000 L7.778,10.000 L7.778,12.000 ZM-0.000,-0.000 L-0.000,2.000 L20.000,2.000 L20.000,-0.000 L-0.000,-0.000 ZM3.333,7.000 L16.667,7.000 L16.667,5.000 L3.333,5.000 L3.333,7.000 Z"
+                  />
+                </svg>
+              </div>
+              <h4>Filter Jobs</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="job-category-listing">
+          <div class="single-listing">
+            <div class="small-section-tittle2">
+              <h4>Job Category</h4>
+            </div>
+
+            <div class="">
+              <select (change)="setCategory($event)" class="form-select">
+                <option value="">All Category</option>
+                <option *ngFor="let cat of categories" [value]="cat">
+                  {{ cat }}
+                </option>
+              </select>
+            </div>
+
+            <div class="select-Categories py-10">
+              <div class="small-section-tittle2">
+                <h4>Job Type</h4>
+              </div>
+              <label class="container"
+                >All
+                <input
+                  (change)="setJobType($event)"
+                  type="radio"
+                  value=""
+                  name="jobtype"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <label class="container" *ngFor="let item of jobNatures"
+                >{{ item }}
+                <input
+                  (change)="setJobType($event)"
+                  type="radio"
+                  [value]="item"
+                  name="jobtype"
+                />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <!-- select-Categories End -->
+          </div>
+          <!-- single two -->
+          <div class="single-listing">
+            <div class="small-section-tittle2">
+              <h4>Job Location</h4>
+            </div>
+            <!-- Select job items start -->
+            <div class="">
+              <select
+                name="select"
+                class="form-select"
+                (change)="setLocation($event)"
+              >
+                <option value="">Anywhere</option>
+                <option [value]="item" *ngFor="let item of locations">
+                  {{ item }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <!-- single three -->
+          <div class="single-listing mb-5">
+            <!-- select-Categories start -->
+            <div class="select-Categories py-6">
+              <div class="small-section-tittle2">
+                <h4>Posted Within</h4>
+              </div>
+              <label class="container"
+                >Any
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="container"
+                >Today
+                <input type="checkbox" checked="checked active" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="container"
+                >Last 2 days
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="container"
+                >Last 3 days
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="container"
+                >Last 5 days
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="container"
+                >Last 10 days
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <!-- select-Categories End -->
+          </div>
+          <div class="single-listing">
+            <!-- Range Slider Start -->
+            <aside
+              class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow"
+            >
+              <div class="small-section-tittle2">
+                <h4>Filter Jobs</h4>
+              </div>
+              <div class="widgets_inner">
+                <div class="range_item">
+                  <!-- <div id="slider-range"></div> -->
+                  <input type="text" class="js-range-slider" value="" />
+                  <div class="d-flex align-items-center">
+                    <div class="price_text">
+                      <p>Price :</p>
+                    </div>
+                    <div class="price_value d-flex justify-content-center">
+                      <input
+                        type="text"
+                        class="js-input-from"
+                        id="amount"
+                        readonly
+                      />
+                      <span>to</span>
+                      <input
+                        type="text"
+                        class="js-input-to"
+                        id="amount"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-9 col-lg-9 col-md-8">
+        <section class="featured-job-area">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="count-job mb-35 mb-3">
+                  <div class="input-group mb-3 w-96">
+                    <span class="input-group-text" id="basic-addon1">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </span>
+                    <input
+                      (keyup)="setSearch($event)"
+                      placeholder="Search with Tag "
+                      class="form-control"
+                    />
+                  </div>
+
+                  <pagination
+                    (pageChanged)="pageChanged($event)"
+                    [totalItems]="pages * 10"
+                  ></pagination>
+                </div>
+              </div>
+            </div>
+
+            <app-job-card *ngFor="let job of jobs" [job]="job"></app-job-card>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

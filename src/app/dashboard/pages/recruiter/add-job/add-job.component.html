@@ -1,0 +1,302 @@
+<div class="card bg-gray-100">
+  <div class="card-body">
+    <form [formGroup]="formData" (ngSubmit)="submit()" class="form">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="from-grpup mb-2">
+            <label class="form-label" for="title">Job Title</label>
+            <input
+              class="form-control form-control-sm"
+              id="title"
+              formControlName="title"
+              placeholder="Job Title "
+              [ngClass]="{
+                'is-invalid':
+                  formData.get('title')?.invalid &&
+                  formData.get('title')?.touched
+              }"
+            />
+            <div
+              *ngIf="
+                formData.get('title')?.invalid && formData.get('title')?.touched
+              "
+              class="invalid-feedback"
+            >
+              Title is required
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="from-grpup mb-2">
+            <label class="form-label" for="companyName">Company Name</label>
+            <input
+              class="form-control form-control-sm"
+              id="companyName"
+              formControlName="companyName"
+              placeholder="Company Name"
+              [ngClass]="{
+                'is-invalid':
+                  formData.get('companyName')?.invalid &&
+                  formData.get('companyName')?.touched
+              }"
+            />
+            <div
+              *ngIf="
+                formData.get('companyName')?.invalid &&
+                formData.get('companyName')?.touched
+              "
+              class="invalid-feedback"
+            >
+              Company name is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="from-grpup mb-2">
+            <label class="form-label" for="image">Image</label>
+            <input
+              type="url"
+              class="form-control form-control-sm"
+              id="image"
+              formControlName="image"
+              placeholder="image"
+              [ngClass]="{
+                'is-invalid':
+                  formData.get('image')?.invalid &&
+                  formData.get('image')?.touched
+              }"
+            />
+            <div
+              *ngIf="
+                formData.get('image')?.invalid && formData.get('image')?.touched
+              "
+              class="invalid-feedback"
+            >
+              Image is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="from-grpup mb-2">
+            <label class="form-label" for="email">Email</label>
+            <input
+              class="form-control form-control-sm"
+              id="email"
+              formControlName="email"
+              placeholder="Your email"
+              [ngClass]="{
+                'is-invalid':
+                  formData.get('email')?.invalid &&
+                  formData.get('email')?.touched
+              }"
+            />
+            <div
+              *ngIf="
+                formData.get('email')?.invalid && formData.get('email')?.touched
+              "
+              class="invalid-feedback"
+            >
+              Email is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="from-grpup mb-2">
+            <label class="form-label" for="website">Website</label>
+            <input
+              type="url"
+              class="form-control form-control-sm"
+              id="website"
+              formControlName="website"
+              placeholder="Your website "
+              [ngClass]="{
+                'is-invalid':
+                  formData.get('website')?.invalid &&
+                  formData.get('website')?.touched
+              }"
+            />
+            <div
+              *ngIf="
+                formData.get('website')?.invalid &&
+                formData.get('website')?.touched
+              "
+              class="invalid-feedback"
+            >
+              Website is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="from-grpup mb-2">
+            <label class="form-label" for="location">Location</label>
+            <input
+              class="form-control form-control-sm"
+              id="location"
+              formControlName="location"
+              placeholder="Your location "
+              [ngClass]="{
+                'is-invalid':
+                  formData.get('location')?.invalid &&
+                  formData.get('location')?.touched
+              }"
+            />
+            <div
+              *ngIf="
+                formData.get('location')?.invalid &&
+                formData.get('location')?.touched
+              "
+              class="invalid-feedback"
+            >
+              Website is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="from-group mb-2">
+            <label class="form-label" for="applicationDate"
+              >Expiration date</label
+            >
+            <input
+              id="applicationDate"
+              class="form-control form-control-sm"
+              placeholder="Datepicker"
+              bsDatepicker
+              formControlName="applicationDate"
+              triggers="mouseenter:click"
+            />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="from-group mb-2">
+            <label class="form-label" for="salary">Salary</label>
+            <select
+              class="form-select form-select-sm"
+              id="salary"
+              formControlName="salary"
+            >
+              <option value="category" *ngFor="let s of salaries" [value]="s">
+                {{ s }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="from-group mb-2">
+            <label class="form-label" for="jobNature">Job Nature</label>
+            <select
+              class="form-select form-select-sm"
+              id="jobNature"
+              formControlName="jobNature"
+            >
+              <option [value]="t" *ngFor="let t of jobTypes" [value]="t">
+                {{ t }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="from-group mb-2">
+            <label class="form-label" for="category">Category</label>
+            <select
+              [value]="categories[0]"
+              class="form-select form-select-sm"
+              id="category"
+              formControlName="category"
+            >
+              <option *ngFor="let cat of categories" [value]="cat">
+                {{ cat }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="from-grpup mb-2">
+            <label class="form-label" for="description">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              rows="3"
+              formControlName="description"
+              placeholder="Your description "
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="from-grpup mb-2">
+            <div class="d-flex">
+              <input
+                class="form-control form-control-sm"
+                id="experience"
+                formControlName="experience"
+                placeholder="experience"
+              />
+              <button
+                (click)="setExperiance()"
+                type="button"
+                class="btn btn-sm btn-success"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="from-grpup mb-2">
+            <div class="d-flex">
+              <input
+                class="form-control form-control-sm"
+                id="requiredKnowledge"
+                formControlName="requiredKnowledge"
+                placeholder="requiredKnowledge"
+              />
+              <button
+                (click)="setRequiredKnowledge()"
+                type="button"
+                class="btn btn-sm btn-success"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Experience List :</li>
+            <li
+              *ngFor="let exp of experiencesArray"
+              class="list-group-item text-xs bg-red-500 p-1 rounded text-white d-flex justify-content-between mb-1 align-items-center"
+            >
+              <span>{{ exp }}</span>
+              <i
+                class="bi bi-x-circle text-md cursor-pointer"
+                (click)="experianceRemove(exp)"
+              ></i>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Required Knowledge:</li>
+            <li
+              *ngFor="let exp of requiredKnowledgeArray"
+              class="list-group-item text-xs bg-red-500 p-1 rounded text-white d-flex mb-1 justify-content-between align-items-center"
+            >
+              <span>{{ exp }}</span>
+              <i
+                class="bi bi-x-circle text-md cursor-pointer"
+                (click)="requiredKnowledgeRemove(exp)"
+              ></i>
+            </li>
+          </ul>
+        </div>
+        <div class="my-3">
+          <button [disabled]="formData.invalid" class="btn btn-success col-12">
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

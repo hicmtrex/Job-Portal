@@ -1,0 +1,72 @@
+<app-table-container
+  [headData]="[
+    'Name',
+    'Company',
+    'Category',
+    'Applay',
+    'Created At',
+    'Options'
+  ]"
+  [title]="'My Jobs List'"
+>
+  <ng-container id="table_addbutton">
+    <button
+      (click)="openAddJob()"
+      class="btn btn-sm btn-soft-white text-gray-900"
+    >
+      <strong class="text-uppercase">Add Job</strong>
+    </button>
+  </ng-container>
+  <ng-container id="mytable">
+    <tr *ngFor="let job of jobs$ | async">
+      <td>
+        <img
+          alt="..."
+          [src]="job.image"
+          class="avatar avatar-sm rounded-circle me-2"
+        />
+        <a class="text-heading font-semibold" href="#"> {{ job.title }} </a>
+      </td>
+
+      <td>
+        <span class="text-heading font-semibold">
+          {{ job.companyName }}
+        </span>
+      </td>
+      <td>{{ job.category }}</td>
+      <td>
+        <span class="badge badge-lg badge-dot">
+          <i class="bg-success"></i>{{ job.apply.length }}
+        </span>
+      </td>
+      <td>{{ job.createdAt | date }}</td>
+
+      <td>
+        <a [routerLink]="['/jobs', job.id]" class="btn btn-sm btn-neutral me-2"
+          >View</a
+        >
+        <button (click)="openAddEdit(job)" class="btn btn-sm btn-neutral me-2">
+          Edit
+        </button>
+
+        <button
+          (click)="deleteJob(job.id)"
+          class="btn btn-sm btn-square btn-danger"
+        >
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </ng-container>
+  <ng-container id="table_pagination">
+    <!-- <pagination
+      (pageChanged)="pageChanged($event)"
+      [totalItems]="pages * 10"
+    ></pagination> -->
+  </ng-container>
+</app-table-container>
+
+<!-- <pagination
+(pageChanged)="pageChanged($event)"
+[totalItems]="pages * 10"
+></pagination> -->

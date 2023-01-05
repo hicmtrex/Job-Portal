@@ -1,0 +1,127 @@
+<div class="card rounded-0">
+  <div class="card-header rounded-0 bg-red-400 text-white">Update Profile</div>
+  <div class="card-body">
+    <form (submit)="submit()" [formGroup]="formData">
+      <div class="mb-5 mt-5">
+        <label class="form-label" for="firstName">First Name</label>
+        <input
+          class="form-control"
+          id="firstName"
+          formControlName="firstName"
+          placeholder="Your username "
+          [ngClass]="{
+            'is-invalid':
+              formData.get('firstName')?.invalid &&
+              formData.get('firstName')?.touched
+          }"
+        />
+        <div
+          *ngIf="
+            formData.get('firstName')?.invalid &&
+            formData.get('firstName')?.touched
+          "
+          class="invalid-feedback"
+        >
+          First Name is required
+        </div>
+      </div>
+      <div class="mb-5 mt-5">
+        <label class="form-label" for="lastName">Last Name</label>
+        <input
+          class="form-control"
+          id="lastName"
+          formControlName="lastName"
+          placeholder="Your lastName "
+          [ngClass]="{
+            'is-invalid':
+              formData.get('lastName')?.invalid &&
+              formData.get('lastName')?.touched
+          }"
+        />
+        <div
+          *ngIf="
+            formData.get('lastName')?.invalid &&
+            formData.get('lastName')?.touched
+          "
+          class="invalid-feedback"
+        >
+          LastName is required
+        </div>
+      </div>
+      <div class="mb-5 mt-5">
+        <label class="form-label" for="email">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+          placeholder="Your email address"
+          [ngClass]="{
+            'is-invalid':
+              formData.get('email')?.invalid && formData.get('email')?.touched
+          }"
+        />
+        <div
+          *ngIf="
+            formData.get('email')?.invalid && formData.get('email')?.touched
+          "
+          class="invalid-feedback"
+        >
+          Email is required
+        </div>
+      </div>
+      <div class="mb-5 mt-5">
+        <label class="form-label" for="address">Address</label>
+        <input
+          class="form-control"
+          id="address"
+          formControlName="address"
+          placeholder="Your address "
+          [ngClass]="{
+            'is-invalid':
+              formData.get('address')?.invalid &&
+              formData.get('address')?.touched
+          }"
+        />
+        <div
+          *ngIf="
+            formData.get('address')?.invalid && formData.get('address')?.touched
+          "
+          class="invalid-feedback"
+        >
+          address is required
+        </div>
+      </div>
+      <div class="mb-5 mt-5">
+        <label class="form-label" for="phone">Phone</label>
+        <input
+          class="form-control"
+          id="phone"
+          formControlName="phone"
+          placeholder="Your phone "
+          [ngClass]="{
+            'is-invalid':
+              formData.get('phone')?.invalid && formData.get('phone')?.touched
+          }"
+        />
+        <div
+          *ngIf="
+            formData.get('phone')?.invalid && formData.get('phone')?.touched
+          "
+          class="invalid-feedback"
+        >
+          Phone is required
+        </div>
+      </div>
+      <div>
+        <button
+          [disabled]="formData.invalid"
+          type="submit"
+          class="btn w-full bg-red-400 text-white"
+        >
+          Update Profile
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

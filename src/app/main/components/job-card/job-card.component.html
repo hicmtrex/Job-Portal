@@ -1,0 +1,22 @@
+<a
+  class="single-job-items mb-30 bg-white rounded mb-5 p-10"
+  [routerLink]="['/jobs', job.id]"
+>
+  <div class="job-items">
+    <div class="company-img">
+      <a href="#"><img class="avatar w-20 h-20" [src]="job.image" alt="" /></a>
+    </div>
+    <div class="job-tittle">
+      <h4>{{ job.title }}</h4>
+      <ul>
+        <li><i class="fas fa-building"></i>{{ job.companyName }}</li>
+        <li><i class="fas fa-map-marker-alt"></i>{{ job.location }}</li>
+        <li><i class="fas fa-wallet"></i>{{ job.salary }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="items-link f-right">
+    <a href="#">{{ job.jobNature }}</a>
+    <span>{{ job.applicationDate | date }}</span>
+  </div>
+</a>

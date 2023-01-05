@@ -1,0 +1,55 @@
+<form (submit)="submit()" [formGroup]="formData">
+  <div class="mb-5 mt-5">
+    <label class="form-label" for="email">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      formControlName="email"
+      placeholder="Your email address"
+      [ngClass]="{
+        'is-invalid':
+          formData.get('email')?.invalid && formData.get('email')?.touched
+      }"
+    />
+    <div
+      *ngIf="formData.get('email')?.invalid && formData.get('email')?.touched"
+      class="invalid-feedback"
+    >
+      Email is required
+    </div>
+  </div>
+  <div class="mb-5">
+    <label class="form-label" for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      formControlName="password"
+      id="password"
+      placeholder="Password"
+      autocomplete="current-password"
+      [ngClass]="{
+        'is-invalid':
+          formData.get('password')?.invalid && formData.get('password')?.touched
+      }"
+    />
+    <div
+      *ngIf="
+        formData.get('password')?.invalid && formData.get('password')?.touched
+      "
+      class="invalid-feedback"
+    >
+      Password is required
+    </div>
+  </div>
+
+  <div>
+    <button
+      [disabled]="formData.invalid"
+      type="submit"
+      class="btn w-full bg-red-400-hover"
+    >
+      Sign in
+    </button>
+  </div>
+</form>

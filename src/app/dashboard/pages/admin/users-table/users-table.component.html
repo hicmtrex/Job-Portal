@@ -1,0 +1,40 @@
+<app-table-container
+  [headData]="['Name', 'Email', 'Phone', 'Status', 'Created At', 'Options']"
+  [title]="'Users List'"
+>
+  <ng-container id="mytable">
+    <tr *ngFor="let user of users">
+      <td>
+        <img
+          alt="..."
+          src="{{ apiUrl }}/{{ user.image }}"
+          class="avatar avatar-sm rounded-circle me-2"
+        />
+        <a class="text-heading font-semibold" href="#">
+          {{ user.firstName }}
+        </a>
+      </td>
+      <td>{{ user.createdAt | date }}</td>
+      <td>
+        <span class="text-heading font-semibold">
+          {{ user.email }}
+        </span>
+      </td>
+
+      <td>
+        <span class="badge badge-lg badge-dot">
+          <i class="bg-success"></i>{{ user.role }}
+        </span>
+      </td>
+      <td>{{ user.createdAt | date }}</td>
+      <td class="">
+        <button
+          (click)="deleteUser(user.id)"
+          class="btn btn-sm btn-square btn-danger"
+        >
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </ng-container>
+</app-table-container>

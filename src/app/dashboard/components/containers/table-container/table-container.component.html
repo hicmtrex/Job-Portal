@@ -1,0 +1,28 @@
+<div class="p-5">
+  <div class="card mb-7">
+    <div
+      class="card-header d-flex align-items-center justify-content-between bg-red-500"
+    >
+      <h3 class="font-bold text-white">
+        <strong>{{ title }}</strong>
+      </h3>
+      <ng-content select="#table_input"></ng-content>
+      <ng-content select="#table_addbutton"></ng-content>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-hover table-nowrap">
+        <thead class="table-light">
+          <tr>
+            <th scope="col" *ngFor="let item of headData">{{ item }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-content select="#mytable"></ng-content>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer border-0 py-5">
+      <ng-content select="#table_pagination"></ng-content>
+    </div>
+  </div>
+</div>

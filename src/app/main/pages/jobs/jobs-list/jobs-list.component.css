@@ -1,0 +1,177 @@
+@media (max-width: 767px) {
+  .job-listing-area {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .job-listing-area {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+.job-listing-area .count-job {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.job-listing-area .count-job span {
+  padding-right: 15px;
+  color: #1e2147;
+  font-size: 16px;
+}
+@media (max-width: 767px) {
+  .job-listing-area .count-job span {
+    margin-bottom: 30px;
+  }
+}
+.job-listing-area .count-job .select-job-items {
+  display: flex;
+}
+.job-listing-area .count-job .select-job-items .nice-select {
+  width: 100px;
+  height: 30px;
+  background: #fff;
+  border-radius: 0px;
+  padding: 10px 12px;
+  color: #5d5d5d;
+  line-height: 6px;
+  border: 1px solid #ededed;
+  border-radius: 5px;
+}
+@media (max-width: 767px) {
+  .job-listing-area .count-job .select-job-items .nice-select {
+    margin-bottom: 20px;
+    padding-left: 25px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .job-listing-area .count-job .select-job-items .nice-select {
+    margin-bottom: 20px;
+    padding-left: 25px;
+  }
+}
+.job-listing-area .count-job .select-job-items .nice-select .list {
+  width: 100%;
+}
+.job-listing-area .count-job .select-job-items .nice-select.open .list {
+  width: 100%;
+  border-radius: 0;
+  border: 0;
+}
+.job-listing-area .count-job .select-job-items .nice-select::after {
+  border-bottom: 1px solid #a9b6cd;
+  border-right: 1px solid #a9b6cd;
+  height: 8px;
+  width: 8px;
+  margin-top: -5px;
+  right: 17px;
+}
+
+.small-section-tittle2 h4 {
+  color: #1e2147;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.small-section-tittle2 .ion {
+  float: left;
+  padding-right: 16px;
+}
+
+.job-category-listing {
+  border: 1px solid #ededed;
+  padding: 30px 19px 30px 30px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .job-category-listing {
+    padding: 30px 19px 30px 16px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .job-category-listing {
+    padding: 30px 19px 30px 16px;
+  }
+}
+
+.job-category-listing .single-listing .select-Categories .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #666666;
+  font-size: 16px;
+}
+@media (max-width: 767px) {
+  .job-category-listing .single-listing .select-Categories .container {
+    font-size: 14px;
+  }
+}
+.job-category-listing .single-listing .select-Categories .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.job-category-listing .single-listing .select-Categories .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border: 1px solid #ddd;
+}
+.job-category-listing
+  .single-listing
+  .select-Categories
+  .container
+  input:checked
+  ~ .checkmark {
+  background-color: #ff4357;
+  border: 2px solid transparent;
+}
+.job-category-listing .single-listing .select-Categories .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.job-category-listing
+  .single-listing
+  .select-Categories
+  .container
+  input:checked
+  ~ .checkmark:after {
+  display: block;
+}
+.job-category-listing
+  .single-listing
+  .select-Categories
+  .container
+  .checkmark::after {
+  left: 8px;
+  top: 1px;
+  width: 6px;
+  height: 14px;
+  border: solid white;
+  border-width: 0px 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.range_item p {
+  margin-bottom: 0;
+}
+.price_value input {
+  border: 0px;
+  text-align: center;
+  max-width: 50px;
+  background-color: transparent;
+}

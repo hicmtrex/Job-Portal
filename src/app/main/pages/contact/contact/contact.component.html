@@ -1,0 +1,65 @@
+<section class="section contact" data-section="section6">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center my-10 font-bold">
+          <h3 class="text-gray-800">Let’s Keep In Touch</h3>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <form [formGroup]="formData" (ngSubmit)="submit()">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <fieldset>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  formControlName="username"
+                />
+              </fieldset>
+            </div>
+            <div class="col-md-6 mb-4">
+              <fieldset>
+                <input
+                  formControlName="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                />
+              </fieldset>
+            </div>
+            <div class="col-md-12 mb-2">
+              <fieldset>
+                <textarea
+                  placeholder="Your Message"
+                  formControlName="message"
+                  rows="6"
+                  class="form-control"
+                ></textarea>
+              </fieldset>
+            </div>
+            <div class="col-md-12">
+              <fieldset>
+                <button type="submit" class="btn btn-danger text-white p-3">
+                  Send Message Now
+                </button>
+              </fieldset>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div id="map">
+          <iframe 
+            src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="422px"
+            frameborder="0"
+            style="border: 0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

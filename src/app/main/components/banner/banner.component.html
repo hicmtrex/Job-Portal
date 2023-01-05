@@ -1,0 +1,89 @@
+<div class="slider-area h-screen">
+  <!-- Mobile Menu -->
+  <div class="slider-active">
+    <div
+      class="single-slider slider-height d-flex align-items-center"
+      style="
+        background-image: url('/assets/images/hero/h1_hero.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 80vh;
+      "
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6 col-lg-9 col-md-10">
+            <div class="hero__caption">
+              <h1>Find the most exciting startup jobs</h1>
+            </div>
+          </div>
+        </div>
+        <!-- Search Box -->
+        <div class="row">
+          <div class="col-xl-8">
+            <!-- form -->
+
+            <form (ngSubmit)="submit()" class="search-box d-flex">
+              <div class="input-form h-18">
+                <input
+                  class="form-control h-18 w-full"
+                  [(ngModel)]="selectedValue"
+                  [typeahead]="jobs"
+                  [ngModelOptions]="{ standalone: true }"
+                  placeholder="Search for Job"
+                  [isAnimated]="true"
+                  [typeaheadItemTemplate]="customItemTemplate"
+                  typeaheadOptionField="title"
+                  (typeaheadOnSelect)="onSelect($event)"
+                  (typeaheadOnPreview)="onPreview($event)"
+                />
+                <ng-template
+                  #customItemTemplate
+                  let-model="item"
+                  let-index="index"
+                >
+                  <a
+                    class="single-job-items p-md-5 p-0 mb-5 bg-white rounded mb-5 bg-gray-100-hover"
+                    [routerLink]="['/jobs', model.id]"
+                  >
+                    <div class="d-flex align-items-center w-full">
+                      <div class="company-img">
+                        <a href="#"
+                          ><img
+                            class="avatar w-20 h-20"
+                            [src]="model.image"
+                            alt=""
+                        /></a>
+                      </div>
+                      <div class="job-tittle">
+                        <h4>{{ model.title }}</h4>
+                        <ul>
+                          <li class="text-xs text-base-md">
+                            <i class="fas fa-building"></i
+                            >{{ model.companyName }}
+                          </li>
+                          <li class="text-xs text-base-md">
+                            <i class="fas fa-map-marker-alt"></i
+                            >{{ model.location }}
+                          </li>
+                          <li>
+                            <i class="fas fa-wallet"></i>{{ model.salary }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </a>
+                </ng-template>
+              </div>
+
+              <div class="search-form">
+                <button type="submit">Find job</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

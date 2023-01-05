@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="card-header rounded-0 bg-red-500 text-white">Apply for job</div>
+  <div class="card-body">
+    <form (ngSubmit)="submit()" [formGroup]="formData">
+      <div class="mb-5 mt-5">
+        <label class="form-label" for="resume">Resume</label>
+        <input
+          type="file"
+          class="form-control"
+          id="resume"
+          (change)="setImage($event)"
+        />
+      </div>
+      <div class="mb-5">
+        <label class="form-label" for="letterMotivation">
+          Letter of motivation
+        </label>
+        <textarea
+          formControlName="letterMotivation"
+          type="password"
+          class="form-control"
+          id="letterMotivation"
+          rows="3"
+          [ngClass]="{
+            'is-invalid':
+              formData.get('letterMotivation')?.invalid &&
+              formData.get('letterMotivation')?.touched
+          }"
+        ></textarea>
+        <div
+          *ngIf="
+            formData.get('letterMotivation')?.invalid &&
+            formData.get('letterMotivation')?.touched
+          "
+          class="invalid-feedback"
+        >
+          Letter Motivation is required
+        </div>
+      </div>
+      <div>
+        <button
+          [disabled]="formData.invalid"
+          type="submit"
+          class="btn w-full bg-red-400 text-white"
+        >
+          Apply Now
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

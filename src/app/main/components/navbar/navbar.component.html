@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-0 py-5">
+  <div class="container-xl">
+    <!-- Logo -->
+    <a class="navbar-brand" routerLink="/">
+      <img
+        src="/assets/images/hero/Job-Portal-Software-2-2.png"
+        class="w-32 h-12"
+        alt="..."
+      />
+    </a>
+    <!-- Navbar toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <!-- Nav -->
+      <div class="navbar-nav mx-lg-auto">
+        <a class="nav-item nav-link" routerLink="/" aria-current="page">Home</a>
+        <a class="nav-item nav-link" routerLink="/jobs">Find a Jobs</a>
+        <a class="nav-item nav-link" routerLink="/about">About</a>
+        <a class="nav-item nav-link" routerLink="/contact">Contact</a>
+      </div>
+      <!-- Right navigation -->
+      <ng-container *ngIf="!authService.isAuthCheck()">
+        <div class="navbar-nav ms-lg-4">
+          <a class="boxed-btn2 me-2" href="#">Register</a>
+        </div>
+        <!-- Action -->
+        <div class="navbar-nav ms-lg-4">
+          <a class="boxed-btn me-2" routerLink="/authentication">Login</a>
+        </div>
+      </ng-container>
+
+      <div *ngIf="authService.isAuthCheck()" class="btn-group" dropdown>
+        <div
+          id="button-disabled-item"
+          dropdownToggle
+          class="cursor-pointer"
+          aria-controls="dropdown-disabled-item"
+        >
+          <img
+            class="avatar avatar-md rounded-circle img-fluid"
+            src="http://localhost:5000/{{ user?.image }}"
+            alt="avatar"
+          />
+          <span class="caret"></span>
+          <i class="fas fa-chevron-down ms-1"></i>
+        </div>
+        <ul
+          id="dropdown-disabled-item"
+          *dropdownMenu
+          class="dropdown-menu"
+          role="menu"
+          aria-labelledby="button-disabled-item"
+        >
+          <li
+            class="disabled"
+            role="menuitem"
+            *ngIf="user?.role !== 'Candidate'"
+          >
+            <a
+              class="dropdown-item bg-gray-200-hover duration-200"
+              routerLink="/dashboard"
+              >Dashboard</a
+            >
+          </li>
+          <li role="menuitem">
+            <a
+              class="dropdown-item bg-gray-200-hover duration-200"
+              [routerLink]="['/user/profile', user?.id]"
+              >My Profile</a
+            >
+          </li>
+          <li role="menuitem">
+            <a
+              (click)="onLogout()"
+              class="dropdown-item bg-gray-200-hover duration-200"
+              href="#"
+              >Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

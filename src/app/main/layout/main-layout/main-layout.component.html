@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+
+<app-banner *ngIf="isHome"></app-banner>
+<main class="main">
+  <router-outlet></router-outlet>
+</main>
+<app-features *ngIf="isHome"></app-features>
+<footer>
+  <app-footer *ngIf="isHome"></app-footer>
+  <app-footer-bottom></app-footer-bottom>
+</footer>

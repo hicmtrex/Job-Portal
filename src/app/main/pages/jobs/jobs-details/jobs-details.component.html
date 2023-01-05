@@ -1,0 +1,106 @@
+<div class="job-post-company py-6">
+  <div class="container">
+    <div class="row justify-content-between" *ngIf="job">
+      <!-- Left Content -->
+      <div class="col-xl-7 col-lg-8">
+        <!-- job single -->
+        <div class="single-job-items mb-5">
+          <div class="job-items">
+            <div class="company-img company-img-details">
+              <a href="#"><img [src]="job.image" class="h-20 w-20" alt="" /></a>
+            </div>
+            <div class="job-tittle">
+              <a href="#">
+                <h4>{{ job.title }}</h4>
+              </a>
+              <ul>
+                <li>{{ job.companyName }}</li>
+                <li><i class="fas fa-map-marker-alt"></i>{{ job.location }}</li>
+                <li>{{ job.salary }} - $8000</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- job single End -->
+
+        <div class="job-post-details">
+          <div class="post-details1 mb-5">
+            <!-- Small Section Tittle -->
+            <div class="small-section-tittle">
+              <h4>Job Description</h4>
+            </div>
+            <p>
+              {{ job.description }}
+            </p>
+          </div>
+          <div class="post-details2 mb-10">
+            <!-- Small Section Tittle -->
+            <div class="mb-5">
+              <h4>Required Knowledge, Skills, and Abilities</h4>
+            </div>
+            <ul>
+              <li *ngFor="let item of job.requiredKnowledge">{{ item }}</li>
+            </ul>
+          </div>
+          <div class="post-details2 mb-5">
+            <!-- Small Section Tittle -->
+            <div class="small-section-tittle">
+              <h4>Education + Experience</h4>
+            </div>
+            <ul>
+              <li *ngFor="let item of job.experience">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Right Content -->
+      <div class="col-xl-4 col-lg-4">
+        <div class="post-details3 mb-5 bg-white">
+          <!-- Small Section Tittle -->
+          <div class="small-section-tittle mb-5">
+            <h3>Job Overview</h3>
+          </div>
+          <ul>
+            <li>Posted date : <span>12 Aug 2019</span></li>
+            <li>
+              Location : <span>{{ job.location }}</span>
+            </li>
+            <li>Vacancy : <span>02</span></li>
+            <li>
+              Job nature : <span>{{ job.jobNature }}</span>
+            </li>
+            <li>
+              Salary : <span>${{ job.salary }}</span>
+            </li>
+            <li>
+              Application date : <span>{{ job.applicationDate }}</span>
+            </li>
+          </ul>
+          <div class="apply-btn2">
+            <button (click)="openApply()"  class="boxed-btn2">Apply Now</button>
+          </div>
+        </div>
+        <div class="post-details4 mb-5">
+          <!-- Small Section Tittle -->
+          <div class="small-section-tittle">
+            <h4>Company Information</h4>
+          </div>
+          <span>Colorlib</span>
+          <p>
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
+          </p>
+          <ul>
+            <li>Name: <span>Colorlib </span></li>
+            <li>
+              Web : <span> {{ job.website }}</span>
+            </li>
+            <li>
+              Email: <span>{{ job.email }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

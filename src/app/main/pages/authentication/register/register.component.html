@@ -1,0 +1,122 @@
+<form (submit)="submit()" [formGroup]="formData">
+  <div class="mb-5 mt-5">
+    <label class="form-label" for="firstName">FirstName</label>
+    <input
+      class="form-control"
+      id="firstName"
+      formControlName="firstName"
+      placeholder="Your username "
+      [ngClass]="{
+        'is-invalid':
+          formData.get('firstName')?.invalid &&
+          formData.get('firstName')?.touched
+      }"
+    />
+    <div
+      *ngIf="
+        formData.get('firstName')?.invalid && formData.get('firstName')?.touched
+      "
+      class="invalid-feedback"
+    >
+      FirstName is required
+    </div>
+  </div>
+  <div class="mb-5 mt-5">
+    <label class="form-label" for="lastName">lastName</label>
+    <input
+      class="form-control"
+      id="lastName"
+      formControlName="lastName"
+      placeholder="Your lastName "
+      [ngClass]="{
+        'is-invalid':
+          formData.get('lastName')?.invalid && formData.get('lastName')?.touched
+      }"
+    />
+    <div
+      *ngIf="
+        formData.get('lastName')?.invalid && formData.get('lastName')?.touched
+      "
+      class="invalid-feedback"
+    >
+      LastName is required
+    </div>
+  </div>
+  <div class="mb-5 mt-5">
+    <label class="form-label" for="email">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      formControlName="email"
+      placeholder="Your email address"
+      [ngClass]="{
+        'is-invalid':
+          formData.get('email')?.invalid && formData.get('email')?.touched
+      }"
+    />
+    <div
+      *ngIf="formData.get('email')?.invalid && formData.get('email')?.touched"
+      class="invalid-feedback"
+    >
+      Email is required
+    </div>
+  </div>
+  <div class="mb-5">
+    <label class="form-label" for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      formControlName="password"
+      id="password"
+      placeholder="Password"
+      autocomplete="current-password"
+      [ngClass]="{
+        'is-invalid':
+          formData.get('password')?.invalid && formData.get('password')?.touched
+      }"
+    />
+    <div
+      *ngIf="
+        formData.get('password')?.invalid && formData.get('password')?.touched
+      "
+      class="invalid-feedback"
+    >
+      Password is required
+    </div>
+  </div>
+  <div class="mb-5">
+    <label class="form-label" for="confirmPassword">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      formControlName="confirmPassword"
+      id="confirmPassword"
+      placeholder="Password"
+      autocomplete="current-password"
+      [ngClass]="{
+        'is-invalid':
+          formData.get('confirmPassword')?.invalid &&
+          formData.get('confirmPassword')?.touched
+      }"
+    />
+    <div
+      *ngIf="
+        formData.get('confirmPassword')?.invalid &&
+        formData.get('confirmPassword')?.touched
+      "
+      class="invalid-feedback"
+    >
+      Confirm Password is required
+    </div>
+  </div>
+  <div>
+    <button
+      [disabled]="formData.invalid"
+      type="submit"
+      class="btn w-full bg-red-400-hover"
+    >
+      Sign up
+    </button>
+  </div>
+</form>

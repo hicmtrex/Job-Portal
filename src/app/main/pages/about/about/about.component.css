@@ -1,0 +1,187 @@
+.support-company-area .support-location-img {
+  position: relative;
+}
+.support-company-area .support-location-img img {
+  width: 100%;
+}
+.support-company-area .support-location-img .support-img-cap {
+  position: absolute;
+  bottom: 0px;
+  background: #1f2b7b;
+  padding: 59px 28px;
+  border-radius: 5px;
+  left: -100px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .support-company-area .support-location-img .support-img-cap {
+    padding: 27px 18px;
+    left: -59px;
+  }
+}
+@media (max-width: 767px) {
+  .support-company-area .support-location-img .support-img-cap {
+    left: 0px;
+    padding: 35px 0px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .support-company-area .support-location-img .support-img-cap {
+    left: 0px;
+    padding: 35px 18px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .support-company-area .support-location-img .support-img-cap {
+    left: 0px;
+    padding: 35px 18px;
+  }
+}
+.support-company-area .support-location-img .support-img-cap span {
+  font-size: 60px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Muli", sans-serif;
+  line-height: 1.2;
+}
+@media (max-width: 767px) {
+  .support-company-area .support-location-img .support-img-cap span {
+    padding: 6px 40px;
+    font-size: 38px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .support-company-area .support-location-img .support-img-cap span {
+    font-size: 35px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .support-company-area .support-location-img .support-img-cap span {
+    font-size: 35px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .support-company-area .support-location-img .support-img-cap span {
+    font-size: 35px;
+  }
+}
+.support-company-area .support-location-img .support-img-cap P {
+  color: #fff;
+  line-height: 1;
+  margin: 0;
+  font-size: 20px;
+}
+.support-company-area .right-caption {
+  position: relative;
+  right: -50px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .support-company-area .right-caption {
+    right: -25px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .support-company-area .right-caption {
+    right: 0px;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .support-company-area .right-caption {
+    right: 0px;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .support-company-area .right-caption {
+    right: 0px;
+    margin-bottom: 40px;
+  }
+}
+.support-company-area .right-caption .support-caption {
+  padding-right: 144px;
+}
+@media (max-width: 767px) {
+  .support-company-area .right-caption .support-caption {
+    padding-right: 0px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .support-company-area .right-caption .support-caption {
+    padding-right: 0px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .support-company-area .right-caption .support-caption {
+    padding-right: 70px;
+  }
+}
+.support-company-area .right-caption .support-caption p {
+  margin-bottom: 46px;
+  font-size: 15px;
+}
+.support-company-area .right-caption .support-caption p.pera-top {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0b0b2b;
+}
+
+@media (max-width: 767px) {
+  .apply-process-area {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .apply-process-area {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+.apply-process-area .single-process {
+  padding: 44px 28px;
+  background: #26317f;
+}
+@media (max-width: 767px) {
+  .apply-process-area .single-process {
+    padding: 34px 10px;
+  }
+}
+.apply-process-area .single-process:hover .process-ion {
+  transform-style: preserve-3d;
+  transform: rotateY(-180deg);
+}
+.apply-process-area .single-process .process-ion {
+  transition: transform 650ms ease-in-out, filter 650ms ease-in-out;
+}
+.apply-process-area .single-process .process-ion span {
+  font-size: 60px;
+  margin-bottom: 13px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.apply-process-area .single-process .process-cap h5 {
+  font-weight: 700;
+  font-size: 24px;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.apply-process-area .single-process .process-cap p {
+  color: #a5aaca;
+}
+
+.apply-bg {
+  height: 70vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.support-company-area .support-location-img .support-img-cap {
+  position: absolute;
+  bottom: 0px;
+  background: #1f2b7b;
+  padding: 59px 28px;
+  border-radius: 5px;
+  left: -100px;
+}

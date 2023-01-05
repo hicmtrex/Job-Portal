@@ -1,0 +1,52 @@
+<app-table-container
+  [headData]="['Name', 'Email', 'Company', 'Category', 'Created At', 'Options']"
+  [title]="'Jobs List'"
+>
+  <ng-container id="table_input">
+    <div class="input-group w-md-1/2">
+      <span class="input-group-text" id="basic-addon1">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </span>
+      <input
+        placeholder="Search with Tag "
+        class="form-control form-control-sm"
+        (keyup)="setSearch($event)"
+      />
+    </div>
+  </ng-container>
+  <ng-container id="table_addbutton"> </ng-container>
+  <ng-container id="mytable">
+    <tr *ngFor="let job of jobs">
+      <td>
+        <img
+          alt="..."
+          [src]="job.image"
+          class="avatar avatar-sm rounded-circle me-2"
+        />
+        <a class="text-heading font-semibold" href="#"> {{ job.title }} </a>
+      </td>
+      <td>{{ job.email }}</td>
+      <td>
+        <span class="text-heading font-semibold">
+          {{ job.companyName }}
+        </span>
+      </td>
+      <td>
+        {{ job.category }}
+      </td>
+      <td>{{ job.createdAt | date }}</td>
+
+      <td>
+        <a [routerLink]="['/jobs', job.id]" class="btn btn-sm btn-neutral"
+          >View</a
+        >
+      </td>
+    </tr>
+  </ng-container>
+  <ng-container id="table_pagination">
+    <pagination
+      (pageChanged)="pageChanged($event)"
+      [totalItems]="pages * 10"
+    ></pagination>
+  </ng-container>
+</app-table-container>

@@ -1,0 +1,52 @@
+.footer-bottom-area .footer-border {
+  border-top: 1px solid #2d3544;
+  padding: 33px 0px 20px;
+}
+.footer-bottom-area .footer-copy-right p {
+  color: #888888;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 12px;
+}
+@media (max-width: 767px) {
+  .footer-bottom-area .footer-copy-right p {
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer-bottom-area .footer-copy-right p {
+    margin-bottom: 20px;
+  }
+}
+.footer-bottom-area .footer-copy-right p i {
+  color: #fb246a;
+}
+.footer-bottom-area .footer-copy-right p a {
+  color: #fb246a;
+}
+.footer-bottom-area .footer-copy-right p a:hover {
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .footer-bottom-area .footer-social {
+    float: left;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer-bottom-area .footer-social {
+    float: left;
+  }
+}
+.footer-bottom-area .footer-social a i {
+  color: #888888;
+  margin-left: 13px;
+  font-size: 14px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.footer-bottom-area .footer-social a i:hover {
+  color: #fb246a;
+}

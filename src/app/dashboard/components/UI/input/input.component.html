@@ -1,0 +1,18 @@
+<div class="from-grpup mb-2">
+  <label class="form-label" for="">Title</label>
+  <input
+    class="form-control"
+    [id]="fieldName"
+    [name]="fieldName"
+    [value]="value"
+    [disabled]="isDisable"
+    (input)="onChange($event)"
+    (blur)="touched()"
+    [ngClass]="{
+      'is-invalid': formField.invalid && formField.dirty
+    }"
+  />
+  <div *ngIf="formField.invalid && formField.dirty" class="invalid-feedback">
+    Title is required
+  </div>
+</div>

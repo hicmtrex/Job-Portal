@@ -1,0 +1,119 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div
+        class="card-header d-flex justify-content-between align-items-center"
+      >
+        <h3>Id : {{ apply.id }}</h3>
+        <img
+          src="http://localhost:5000/{{ apply.user.image }}"
+          alt=""
+          class="avatar w-16 h-16"
+        />
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <div class="row">
+            <div class="col-md-6">
+              <h4 class="my-2">User Information</h4>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center bg-gray-100"
+              >
+                <span>Username :</span>
+                <span> {{ apply.user.firstName }}</span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center bg-gray-100"
+              >
+                <span>Email :</span>
+                <span> {{ apply.user.email }}</span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center bg-gray-100"
+              >
+                <span>Phone :</span>
+                <span> {{ apply.user.phone }}</span>
+              </li>
+            </div>
+            <div class="col-md-6">
+              <h4 class="my-2">Job Information</h4>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center bg-gray-100"
+              >
+                <span>Title :</span>
+                <span> {{ apply.job.title }}</span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center bg-gray-100"
+              >
+                <span>Company Name :</span>
+                <span> {{ apply.job.companyName }}</span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center bg-gray-100"
+              >
+                <span>Phone :</span>
+                <span> {{ apply.user.phone }}</span>
+              </li>
+            </div>
+          </div>
+          <div class="row">
+            <h4 class="my-3">Apply Information</h4>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center bg-gray-100"
+            >
+              <span>status :</span>
+              <span
+                [ngClass]="{
+                  'text-green-500': apply.status === 'success',
+                  'text-yellow-500': apply.status === 'pending',
+                  'text-red-500': apply.status === 'rejected'
+                }"
+              >
+                <i *ngIf="apply.status === 'success'" class="fas fa-check"></i>
+                <i
+                  *ngIf="apply.status === 'pending'"
+                  class="fas fa-history"
+                ></i>
+                <i *ngIf="apply.status === 'rejected'" class="fas fa-times"></i>
+                {{ apply.status }}
+              </span>
+            </li>
+
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center bg-gray-100"
+            >
+              <span> {{ apply.letter }}</span>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center bg-gray-100"
+            >
+              <span> Resume : </span>
+              <a href="http://localhost:5000/{{ apply.resume }}"
+                >Download <i class="fas fa-download"></i
+              ></a>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center bg-gray-100"
+            >
+              <button
+                [disabled]="apply.status !== 'pending'"
+                class="btn btn-success col-4"
+                (click)="updateApply('success')"
+              >
+                Approve
+              </button>
+              <button
+                [disabled]="apply.status !== 'pending'"
+                class="btn btn-danger col-4"
+                (click)="updateApply('rejected')"
+              >
+                Refuse
+              </button>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

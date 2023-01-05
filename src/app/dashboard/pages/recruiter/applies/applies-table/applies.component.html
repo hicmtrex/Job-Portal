@@ -1,0 +1,51 @@
+<app-table-container [headData]="headData" [title]="'Apply List'">
+  <ng-container id="table_addbutton"> </ng-container>
+  <ng-container id="mytable">
+    <tr *ngFor="let apply of applies$ | async">
+      <td>
+        <img
+          alt="..."
+          src="http://localhost:5000/{{ apply.user.image }}"
+          class="avatar avatar-sm rounded-circle me-2"
+        />
+        <a class="text-heading font-semibold" href="#">
+          {{ apply.user.firstName }}
+        </a>
+      </td>
+
+      <td>
+        <span class="text-heading font-semibold">
+          {{ apply.user.email }}
+        </span>
+      </td>
+      <td>{{ apply.job.title }}</td>
+      <td
+        [ngClass]="{
+          'text-green-500': apply.status === 'success',
+          'text-yellow-500': apply.status === 'pending',
+          'text-red-500': apply.status === 'rejected'
+        }"
+      >
+        <i *ngIf="apply.status === 'success'" class="fas fa-check"></i>
+        <i *ngIf="apply.status === 'pending'" class="fas fa-history"></i>
+        <i *ngIf="apply.status === 'rejected'" class="fas fa-times"></i>
+        {{ apply.status }}
+      </td>
+      <td>{{ apply.job.createdAt | date }}</td>
+
+      <td>
+        <a
+          [routerLink]="['/dashboard/recruiter/applies', apply.id]"
+          class="btn btn-sm btn-neutral me-2"
+          >View</a
+        >
+      </td>
+    </tr>
+  </ng-container>
+  <ng-container id="table_pagination">
+    <pagination
+      (pageChanged)="pageChanged($event)"
+      [totalItems]="appliesCount"
+    ></pagination>
+  </ng-container>
+</app-table-container>

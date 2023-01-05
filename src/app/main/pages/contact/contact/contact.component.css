@@ -1,0 +1,10 @@
+.section-heading h2 {
+  margin-top: 100px;
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 15px 20px;
+  border: 2px solid rgba(250, 250, 250, 0.1);
+}
