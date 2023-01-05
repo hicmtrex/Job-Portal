@@ -20,15 +20,15 @@
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img  alt="angular" src="./assets/gifs/bandicam 2023-01-05 23-17-48-051.gif" />
+  <img  alt="angular" src="./assets/gifs/1.gif" loading="lazy" />
 </div>
 
 <div align="center"> 
-  <img  alt="angular" src="./assets/images/Frontend_-_2022-12-27_17.19.47.png" />
+  <img  alt="angular"  src="./assets/gifs/2.gif"  loading="lazy"/>
 </div>
 
 <div align="center"> 
-  <img  alt="angular" src="./assets/images/Frontend_-_2022-12-27_17.20.23.png" />
+  <img  alt="angular"  src="./assets/gifs/3.gif"  loading="lazy" />
 </div>
 <!-- TechStack -->
 
