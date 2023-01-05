@@ -46,7 +46,7 @@
 <details>
   <summary>👉 Backend Repo</summary>
      <ul>
-  <a href="https://github.com/hicmtrex/Mean_Shop_Backend">jobportal-backend</a>
+  <a href="https://github.com/hicmtrex/Job_Portal_Server">jobportal-backend</a>
      </ul>
   
 </details>
@@ -99,7 +99,7 @@ To run tests, run the following command
 Clone the project
 
 ```bash
-  git clone https://github.com/hicmtrex/Mean_Shop_Frontend
+  git clone https://github.com/hicmtrex/Job_Portal_Server
 ```
 
 Go to the project directory
@@ -138,7 +138,7 @@ Distributed under the License. See LICENSE.txt for more information.
 
 Hicm- [@twitter](https://twitter.com/hicmtrex) - hichembouallegue@gmail.com
 
-Project Link: [https://mean-shop.vercel.app/](https://mean-shop.vercel.app/)
+<!-- Project Link: [https://mean-shop.vercel.app/](https://mean-shop.vercel.app/) -->
 
 ## Support
 
