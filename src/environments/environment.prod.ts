@@ -1,4 +1,4 @@
 export const enviroment = {
   production: true,
-  apiUrl: 'http://localhost:5000',
+  apiUrl: 'https://jobs-portal.onrender.com',
 };

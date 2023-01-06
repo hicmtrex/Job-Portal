@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Observable } from 'rxjs';
 import { AuthService } from './shard/services/auth.service';
 import { userRefreshPending } from './shard/store/auth/actions';
+import { authLoading } from './shard/store/auth/selectors';
 import { StoreAppTypes } from './utils/interfaces/store.interface';
 
 @Component({
@@ -11,6 +13,8 @@ import { StoreAppTypes } from './utils/interfaces/store.interface';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  loading$ = this.store.pipe(select(authLoading));
+
   constructor(
     private store: Store<StoreAppTypes>,
     private authService: AuthService,

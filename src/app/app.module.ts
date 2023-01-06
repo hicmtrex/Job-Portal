@@ -34,7 +34,7 @@ import { ApplyModalComponent } from './main/pages/apply-modal/apply-modal.compon
     FormsModule,
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
-    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
+    NgxSpinnerModule.forRoot({ type: 'square-jelly-box' }),
     StoreModule.forRoot(),
     EffectsModule.forRoot(),
     StoreModule.forFeature('auth', authReducer),

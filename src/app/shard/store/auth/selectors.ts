@@ -5,3 +5,7 @@ export const getAuthState = (state: StoreAppTypes) => state.auth;
 
 export const isAuth = createSelector(getAuthState, (state) => state.isAuth);
 export const token = createSelector(getAuthState, (state) => state.token);
+export const authLoading = createSelector(
+  getAuthState,
+  (state) => state.isLoading
+);

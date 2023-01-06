@@ -21,6 +21,7 @@ export class AuthService implements OnInit {
   token: string | null = null;
   user: UserInfoTypes | null = null;
   redirectUrl: string = '';
+  loading: boolean = false;
 
   constructor(
     private http: HttpClient,
